@@ -19,8 +19,8 @@ export default function HomePage() {
         Hello {router?.query?.name} Welcome to Home Page!
       </Typography>
       <Box>
-        {data?.map((item: IUsersData) => {
-          return <Box padding={'10px'}>{item?.username}</Box>
+        {data?.map((item: IUsersData, index) => {
+          return <Box padding={'10px'} key={index}>{item?.username}</Box>
         })}
       </Box>
     </Container>

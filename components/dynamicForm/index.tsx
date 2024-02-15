@@ -35,12 +35,13 @@ export default function DynamicForm(props: FormProps) {
                         field={field}
                         control={control}
                         errors={errors}
+                        watch={watch}
                     // indexNumber={indexNumber}
                     // name={name}
                     />
                 );
             case "RADIO":
-                return <RadioField field={field} control={control} errors={errors} />;
+                return <RadioField field={field} control={control} errors={errors} watch={watch} />;
             case "LIST":
                 return (
                     <ListField
@@ -48,6 +49,7 @@ export default function DynamicForm(props: FormProps) {
                         errors={errors}
                         control={control}
                         getValues={getValues}
+                        watch={watch}
                     />
                 );
 
