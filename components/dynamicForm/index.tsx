@@ -28,7 +28,6 @@ export default function DynamicForm(props: FormProps) {
     } = props;
     const renderField = (field: IDynamicFieldProps, index: number) => {
         switch (field.fieldType) {
-            //text
             case "TEXT":
                 return (
                     <TextFieldComponent
@@ -36,8 +35,6 @@ export default function DynamicForm(props: FormProps) {
                         control={control}
                         errors={errors}
                         watch={watch}
-                    // indexNumber={indexNumber}
-                    // name={name}
                     />
                 );
             case "RADIO":

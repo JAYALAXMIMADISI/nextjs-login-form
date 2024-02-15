@@ -123,8 +123,7 @@ export default function LoginForm() {
             >
                 <Box sx={{ width: "50%", display: 'flex', padding: '20px', justifyContent: 'center', alignItems: 'center', backgroundImage: "linear-gradient(#66b3ff,#cce6ff, #66b3ff)" }}>
                     <Box flexDirection={'column'} >
-                        <Typography variant="h4">Log In Form</Typography>
-
+                        <Typography variant="h5">Log In Form</Typography>
                         <Typography sx={{
                             fontFamily: "roboto", fontSize: '10px', color: 'purple',
                         }}>Fill the Required Fields with (*) to Log In</Typography>
