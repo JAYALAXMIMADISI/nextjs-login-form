@@ -13,7 +13,7 @@ const ErrorWrapper = styled("p")({
 });
 
 export const Wrapper = styled("span")({
-    width: "100%",
+    width: "inherit",
     display: "inline-block",
     marginBottom: "10px",
     overflowWrap:'break-word',
