@@ -53,11 +53,6 @@ export default function LoginForm() {
     }, [])
 
     useEffect(() => {
-        console.log("check for formValues", watch())
-        localStorage.setItem("fieldValues", JSON.stringify(watch()))
-    }, [watch()])
-
-    useEffect(() => {
         if (data && data !== undefined && Object.keys(data).length > 0) {
             sessionStorage.setItem("token", data?.token)
             setLoading(false)
@@ -89,10 +84,15 @@ export default function LoginForm() {
                     state = true
                     setCustomErrorMessage("Incorrect Email")
                 }
+                else if (getObjFormUSer[0]?.gender !== values?.gender) {
+                    state = true
+                    setCustomErrorMessage("Incorrect Gender")
+                }
             }
         }
 
         if (!state) {
+            localStorage.setItem("fieldValues", JSON.stringify(watch()))
             fetch('https://dummyjson.com/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
