@@ -8,16 +8,13 @@ const ErrorWrapper = styled("p")({
     margin: 0,
     padding: "5px 0px 0px 0px ",
     color: "#e21313",
-    width: "220px",
     fontSize: "12px",
 });
 
 export const Wrapper = styled("span")({
-    width: "inherit",
+    width: "100%",
     display: "inline-block",
     marginBottom: "10px",
-    inlineSize:"inherit",
-    overflowWrap:"break-word",
 });
 
 interface ErrorProps {
