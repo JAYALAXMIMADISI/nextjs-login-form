@@ -1,3 +1,4 @@
+import { IDynamicFieldProps } from "@/interfaces/login";
 import { styled } from "@mui/styles";
 const FieldWrap = styled("p")({
     display: "block",
@@ -19,18 +20,16 @@ export const Wrapper = styled("span")({
 
 interface ErrorProps {
     errors: any;
-    field: any;
-    name?: any;
-    indexNumber?: any;
+    field: IDynamicFieldProps;
+    name?: string;
+    indexNumber?: number | string;
 }
 const FieldError = ({ errors, field, name, indexNumber }: ErrorProps) => {
     return (
         <Wrapper>
             <ErrorWrapper>
                 {errors &&
-                    (indexNumber !== undefined
-                        ? errors?.[name]?.[indexNumber]?.[field.id]?.message
-                        : errors[field.id]?.message)}
+                    errors?.[field.id]?.message}
             </ErrorWrapper>
         </Wrapper>
     );

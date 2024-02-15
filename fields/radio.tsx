@@ -1,11 +1,13 @@
 import { FormControl, Grid, TextField } from "@mui/material"
 import { Controller } from "react-hook-form"
 import { FormLabel, RadioGroup, FormControlLabel, Radio } from "@mui/material"
+import { IDynamicFieldProps } from "@/interfaces/login"
 
 interface IRadioFieldProps {
-    field: any
-    control: any
-    errors: any
+    field: any;
+    control: any;
+    errors: any;
+    watch?:{};
 }
 
 const RadioField = ({ field, control, errors }: IRadioFieldProps) => {

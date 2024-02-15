@@ -1,4 +1,5 @@
 import FieldError from "@/components/dynamicForm/fieldError";
+import { IDynamicFieldProps } from "@/interfaces/login";
 import {
     Grid,
     TextField,
@@ -14,14 +15,16 @@ interface ISingleSelectCustomFieldProps {
     field: any;
     control: any;
     errors: any;
+    watch?: {};
     // filteredData: any;
-    getValues?: any;
+    getValues?: {};
 }
 
 const ListField = ({
     field,
     errors,
     control,
+    watch,
     // filteredData,
     getValues,
 }: ISingleSelectCustomFieldProps) => {
@@ -30,7 +33,7 @@ const ListField = ({
             <Controller
                 render={({ field: { onChange, value } }) => (
                     <>
-                        <FormControl error={errors && errors[field.id]?.message} component="fieldset" size="small" style={{ minWidth: 350 }}>
+                        <FormControl error={errors && errors[field.id]?.message} component="fieldset" size="small" fullWidth>
                             {/* <FormLabel component="legend" sx={{mb:'10px'}}>{field.name}</FormLabel> */}
                             <InputLabel id="demo-simple-select-label">
                                 {field.label}

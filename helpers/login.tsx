@@ -4,7 +4,6 @@ export const mandatoryFields = [
     { id: "full_name" },
     { id: "email" },
     { id: "gender" },
-    { id: "love_react" }
 ]
 
 
@@ -49,10 +48,10 @@ export const fields = [
     },
     {
         id: "love_react",
-        name: "Love React ? *",
+        name: "Love React ?",
         fieldType: "RADIO",
         defaultValue: "Yes",
-        required: true,
+        required: false,
         listOfValues1: [
             "Yes",
             "No"
@@ -68,9 +67,13 @@ export const loginFormInitialValues = {
     love_react: false
 }
 
+var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+
+
 export const loginFormValidationSchema = Yup.object().shape({
     full_name: Yup.string().max(100, "maximum characters length is 100").min(1, "Full Name is Required"),
-    email: Yup.string().max(50, "maximum characters length is 50").min(1, "Email is Required"),
+    email: Yup.string().max(50, "maximum characters length is 50").min(1, "Email is Required").matches(validRegex, "Please enter valid email address"),
     gender: Yup.string().required("Gender is Required"),
     love_react: Yup.string()
 })

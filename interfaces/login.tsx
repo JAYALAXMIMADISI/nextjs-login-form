@@ -1,17 +1,14 @@
 export interface IDynamicFieldProps {
-    id?: string;
-    name?: string;
+    id: string;
+    name: string;
     fieldType: string;
-    isDependent?: boolean;
-    listKey?: string;
-    dependencyFields?: [];
-    mandatory?: boolean;
-    property?: "horizontal" | "vertical" | undefined;
-    isController?: boolean;
-    createNewStatus?: boolean;
-    placeholder?: string;
-    isSearchEnable?: boolean;
-    label?: string;
+    minLength?: number;
+    type?: string;
+    maxLength?: number;
+    defaultValue: string;
+    required: true;
+    label: string;
+    listOfValues1?: string[];
     breakpoints?: {
         sm: string;
         md: string;
@@ -19,7 +16,6 @@ export interface IDynamicFieldProps {
         xl: string;
         "2xl": string;
     };
-    customOptions?: [];
 }
 
 export interface IDynamicFormProps {
@@ -32,4 +28,40 @@ export interface IDynamicFormProps {
     name?: string;
     indexNumber?: number;
     controlName?: string;
-  }
+}
+
+
+export interface IToken {
+    email: string;
+    firstName: string;
+    gender: string;
+    id: number;
+    image: string;
+    lastName: string;
+    token: string;
+    username: string
+}
+
+export interface IUsersData {
+    id: number,
+    name: string;
+    username: string;
+    email: string;
+    address: {
+        street: string;
+        suite: string;
+        city: string;
+        zipcode: string;
+        geo: {
+            lat: string;
+            lng: string;
+        }
+    },
+    phone: string;
+    website: string;
+    company: {
+        name: string;
+        catchPhrase: string;
+        bs: string;
+    }
+}
