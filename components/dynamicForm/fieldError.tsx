@@ -16,7 +16,7 @@ export const Wrapper = styled("span")({
     width: "100%",
     display: "inline-block",
     marginBottom: "10px",
-    wordWrap:"break-word"
+    overflowWrap:'break-word',
 });
 
 interface ErrorProps {
